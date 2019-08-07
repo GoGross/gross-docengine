@@ -74,13 +74,17 @@ module.exports = class DocEngine {
 						
 					} else {
 						
-						body = JSON.parse ( body );
-						
-						if ( body.hasOwnProperty ( "error" ) ) {
+						try{
 							
-							reject ( body )
+							body = JSON.parse ( body );
 							
-						} else {
+							if ( body.hasOwnProperty ( "error" ) ) {
+								
+								reject ( body )
+								
+							}
+							
+						}catch ( e ) {
 							
 							resolve ( body )
 							
