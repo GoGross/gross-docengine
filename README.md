@@ -9,7 +9,7 @@ Serveless, Scalable HTML to PDF API for Developers. Create high quality, customi
 
 ```sh
 # Using npm
-npm install --save docengine
+npm install --save gross-docengine
 
 ```
 
