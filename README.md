@@ -15,7 +15,7 @@ npm install --save gross-docengine
 
 ## Getting started
 
-[![FinCharts](https://raw.githubusercontent.com/GoGross/fincharts/master/free-key.jpg)](https://github.com/GoGross/gross-docengine)
+[![FinCharts](https://raw.githubusercontent.com/GoGross/fincharts/master/free-key.jpg)](https://cloud.gogross.com)
 
 Signup for a free account at docengine.gogross.com to obtain a free API Key.
 
