@@ -1,7 +1,7 @@
 {
   "name": "gross-docengine",
-  "version": "1.0.0",
-  "description": "Serveless, Scalable HTML to PDF API for Developers",
+  "version": "2.5.3",
+  "description": "Serveless, Scalable HTML to PDF API for Developers. Create high quality, customizable PDF documents from data sources and HTML templates.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

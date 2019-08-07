@@ -36,7 +36,8 @@ DocEngine is CORS enabled and allows Access-Control Headers. This will enable yo
 
 ## :clipboard: Example
 
-### NodeJS
+### REST
+
 ```
 curl -X GET \
   -H "Content-Type: application/json" \
@@ -44,6 +45,7 @@ curl -X GET \
   https://api.gogross.com/docengine?key=get_free_api_key
 ```
 
+### NodeJS
 
 ```js
 const DocEngine     = require ( 'gross-docengine' );
@@ -65,7 +67,7 @@ const options = {
     footerHeight : "10mm"
 };
 
-docEngine.info ( DOCENGINE_KEY, options )
+docEngine.info ( options, DOCENGINE_KEY )
 	.then ( ( info ) => {
 		
 		console.log ( info );

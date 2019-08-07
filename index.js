@@ -22,7 +22,7 @@ module.exports = class DocEngine {
 	 * @param {string} DOCENGINE_KEY - environment key
 	 * @param {object} OPTIONS - options object for printing document
 	 */
-	constructor ( DOCENGINE_KEY, OPTIONS ) {
+	constructor ( OPTIONS, DOCENGINE_KEY ) {
 		
 		this.OPTIONS       = OPTIONS;
 		this.DOCENGINE_KEY = DOCENGINE_KEY || process.env.DOCENGINE_KEY;
