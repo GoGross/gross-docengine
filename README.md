@@ -48,31 +48,32 @@ curl -X GET \
 ### NodeJS
 
 ```js
+
 const DocEngine     = require ( 'gross-docengine' );
-const docEngine     = new DocEngine ();
 const DOCENGINE_KEY   = process.env.DOCENGINE_KEY;  // API Key
 
-const CONFIG = { 
+const DOC = {
 	HTML: "<div>body</div>",
-    pdfName : "try.pdf",
-    options: {
-	headerHTML : "<div>header</div>",
-        footerHTML : "<div>footer</div>",
-        pageSize : "A4",
-        pageOrientation : "portrait",
-        marginWidthTop : "10mm",
-        marginWidthLeft : "10mm",
-        marginWidthRight : "10mm",
-        marginWidthBottom : "10mm",
-        headerHeight : "10mm",
-        footerHeight : "10mm"	
-    }
+	pdfName : "try",
+	options: {
+		headerHTML : "<div>header</div>",
+		footerHTML : "<div>footer</div>",
+		pageSize : "A4",
+		pageOrientation : "portrait",
+		marginWidthTop : "10mm",
+		marginWidthLeft : "10mm",
+		marginWidthRight : "10mm",
+		marginWidthBottom : "10mm",
+		headerHeight : "10mm",
+		footerHeight : "10mm"
+	}
 };
 
-docEngine.info ( CONFIG, DOCENGINE_KEY )
-	.then ( ( info ) => {
+const docEngine     = new DocEngine ( DOC, DOCENGINE_KEY  );
+docEngine.print ( )
+	.then ( ( documentUrl ) => {
 		
-		console.log ( info );
+		console.log ( documentUrl );
 		
 	} )
 	.catch ( ( error ) => {
@@ -80,6 +81,7 @@ docEngine.info ( CONFIG, DOCENGINE_KEY )
 		console.trace ( error );
 		
 	} );
+
 
 
 
