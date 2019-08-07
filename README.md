@@ -52,7 +52,7 @@ const DocEngine     = require ( 'gross-docengine' );
 const docEngine     = new DocEngine ();
 const DOCENGINE_KEY   = process.env.DOCENGINE_KEY;  // API Key
 
-const DOC = { 
+const CONFIG = { 
 	HTML: "<div>body</div>",
     pdfName : "try.pdf",
     options: {
@@ -69,7 +69,7 @@ const DOC = {
     }
 };
 
-docEngine.info ( DOC, DOCENGINE_KEY )
+docEngine.info ( CONFIG, DOCENGINE_KEY )
 	.then ( ( info ) => {
 		
 		console.log ( info );

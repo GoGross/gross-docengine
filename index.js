@@ -20,13 +20,15 @@ module.exports = class DocEngine {
 	 * @constructor
 	 * @hideconstructor
 	 * @param {string} DOCENGINE_KEY - environment key
-	 * @param {object} OPTIONS - options object for printing document
+	 * @param {object} CONFIG - options object for printing document
 	 */
-	constructor ( OPTIONS, DOCENGINE_KEY ) {
+	constructor ( CONFIG, DOCENGINE_KEY ) {
 		
-		this.OPTIONS       = OPTIONS;
+		this.OPTIONS       = CONFIG.options;
+		this.HTML          = CONFIG.HTML;
+		this.pdfName       = CONFIG.pdfName;
 		this.DOCENGINE_KEY = DOCENGINE_KEY || process.env.DOCENGINE_KEY;
-		this.baseURL       = "https://api.gogross.com/docengine/";
+		this.baseURL       = (process.env.ENV = "development") ? "https://localhost:8080/docengine/" : "https://api.gogross.com/docengine/";
 		
 	}
 	
@@ -66,7 +68,17 @@ module.exports = class DocEngine {
 				
 				let url = this.baseURL + '?key=' + this.DOCENGINE_KEY;  // signup for free at docengine.gogross.com
 				
-				return request ( { url : url }, function ( error, response, body ) {
+				return request ( {
+					url : url,
+					method : 'get',
+					headers : {},
+					body : {
+						html : this.HTML,
+						pdfSettings : JSON.stringify ( this.OPTIONS ),
+						pdfName : this.pdfName
+					},
+					json : true
+				}, async function ( error, response, body ) {
 					
 					if ( error ) {
 						
@@ -74,7 +86,7 @@ module.exports = class DocEngine {
 						
 					} else {
 						
-						try{
+						try {
 							
 							body = JSON.parse ( body );
 							
@@ -82,9 +94,13 @@ module.exports = class DocEngine {
 								
 								reject ( body )
 								
+							} else {
+								
+								resolve ( body )
+								
 							}
 							
-						}catch ( e ) {
+						} catch ( e ) {
 							
 							resolve ( body )
 							
