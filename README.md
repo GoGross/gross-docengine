@@ -52,22 +52,24 @@ const DocEngine     = require ( 'gross-docengine' );
 const docEngine     = new DocEngine ();
 const DOCENGINE_KEY   = process.env.DOCENGINE_KEY;  // API Key
 
-const options = { 
-    HTML : "<div>body</div>",
-    headerHTML : "<div>header</div>",
-    footerHTML : "<div>footer</div>",
+const DOC = { 
+	HTML: "<div>body</div>",
     pdfName : "try.pdf",
-    pageSize : "A4",
-    pageOrientation : "portrait",
-    marginWidthTop : "10mm",
-    marginWidthLeft : "10mm",
-    marginWidthRight : "10mm",
-    marginWidthBottom : "10mm",
-    headerHeight : "10mm",
-    footerHeight : "10mm"
+    options: {
+	headerHTML : "<div>header</div>",
+        footerHTML : "<div>footer</div>",
+        pageSize : "A4",
+        pageOrientation : "portrait",
+        marginWidthTop : "10mm",
+        marginWidthLeft : "10mm",
+        marginWidthRight : "10mm",
+        marginWidthBottom : "10mm",
+        headerHeight : "10mm",
+        footerHeight : "10mm"	
+    }
 };
 
-docEngine.info ( options, DOCENGINE_KEY )
+docEngine.info ( DOC, DOCENGINE_KEY )
 	.then ( ( info ) => {
 		
 		console.log ( info );
