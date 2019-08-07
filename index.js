@@ -1,5 +1,7 @@
 "use strict";
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 const request = require ( 'request' );
 
 /**
@@ -32,31 +34,7 @@ module.exports = class DocEngine {
 		
 	}
 	
-	/**
-	 * Get IP info
-	 * @example <caption>Example usage on invocation.</caption>
-	 * let card = new Document ( {
-	*	    objectId: "guFmMzEn4q"
-	* } );
-	 * return await card.get (); // don't capture promises in cloud
-	 *
-	 *
-	 * @requires {DOCENGINE_KEY}  process.env.DOCENGINE_KEY for
-	 * @returns {Object} `{
-	 * "ip": "105.4.7.150",
-	 * "location": {
-	 *  "city": "Johannesburg",
-	 *  "region": "Gauteng",
-	 *  "country": "ZA"
-     *   "lon": -26.2309,
-     *   "lat": 28.0583,
-     *   "postal": "2001"
-     *   }
-     *       . . .
-	 * }`
-	 *
-	 */
-	async info () {
+	async print () {
 		
 		return new Promise ( async ( resolve, reject ) => {
 			

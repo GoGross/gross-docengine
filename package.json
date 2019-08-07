@@ -1,10 +1,11 @@
 {
   "name": "gross-docengine",
-  "version": "2.5.7",
+  "version": "2.5.9",
   "description": "Serveless, Scalable HTML to PDF API for Developers. Create high quality, customizable PDF documents from data sources and HTML templates.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node -r dotenv/config index.js dotenv_config_path=.env --verbose",
+    "test": "node -r dotenv/config test.js dotenv_config_path=.env --verbose"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,8 @@
   },
   "homepage": "https://github.com/GoGross/gross-docengine#readme",
   "dependencies": {
-    "http": "0.0.0"
+    "dotenv": "^5.0.1",
+    "http": "0.0.0",
+    "request": "^2.88.0"
   }
 }
