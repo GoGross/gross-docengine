@@ -30,7 +30,7 @@ module.exports = class DocEngine {
 		this.HTML          = CONFIG.HTML;
 		this.pdfName       = CONFIG.pdfName;
 		this.DOCENGINE_KEY = DOCENGINE_KEY || process.env.DOCENGINE_KEY;
-		this.baseURL       = (process.env.ENV = "development") ? "https://localhost:8080/docengine/" : "https://api.gogross.com/docengine/";
+		this.baseURL       = (process.env.NODE_ENV === "development") ? "https://localhost:8080/docengine/" : "https://api.gogross.com/docengine/";
 		
 	}
 	
