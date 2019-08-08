@@ -23,7 +23,7 @@ Document engine is fully built on HTTPS REST interface and integrates with sever
 
 ## API
 
-DocEngine exposes its data via an Application Programming Interface (API), so developers can interact in a programmatic way with the DocEngine Service. This document is the official reference for that functionality. The current API version is 1.0.0
+DocEngine exposes its data via an Application Programming Interface (API), so developers can interact in a programmatic way with the DocEngine Service. This document is the official reference for that functionality.
 
 ## Authentication
 
