@@ -1,7 +1,7 @@
 ![DocEngine](https://raw.githubusercontent.com/GoGross/gross-docengine/master/docengine.png)
 
 ---
-## DocEngine
+## DocEngine Premium
 
 Serveless, Scalable HTML to PDF API for Developers. Create high quality, customizable PDF documents from data sources & HTML templates.
 

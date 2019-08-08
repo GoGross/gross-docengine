@@ -1,6 +1,6 @@
 {
   "name": "gross-docengine",
-  "version": "2.6.4",
+  "version": "2.6.5",
   "description": "Serveless, Scalable HTML to PDF API for Developers. Create high quality, customizable PDF documents from data sources and HTML templates.",
   "main": "index.js",
   "scripts": {
